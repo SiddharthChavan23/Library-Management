@@ -23,7 +23,7 @@ A Python backend using FastAPI and Docker, designed for full-stack applications.
 3. **Run the Docker Container:**
 
     ```bash
-    docker run -d -p 8080:80 siddharthc23/backendapi
+    docker run -d -p 8080:80 siddharthc23/backendapi:backendapi
     ```
 
     This command will start the FastAPI application in a Docker container, mapping port 8000 on your local machine to port 80 inside the container.
