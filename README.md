@@ -48,5 +48,11 @@ uvicorn index:app --reload
 ```
 
 The FastAPI application should now be accessible at [http://localhost:8000](http://localhost:8000) on your local machine. You can use [http://localhost:8000/docs](http://localhost:8000/docs) to check the API usage.
-![image](https://github.com/SiddharthChavan23/LibSysRepository/assets/88672777/57e04864-01d9-43b3-859e-7ec1b9410758)
+
+
+#Architecture and Flow 
+![image](https://github.com/SiddharthChavan23/LibSysRepository/assets/88672777/f7dbcd40-e1f3-480f-85fa-3a0f11c9a515)
+
+
+
 
