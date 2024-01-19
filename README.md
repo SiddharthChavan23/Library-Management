@@ -18,7 +18,7 @@ A Python backend using FastAPI and Docker, designed for full-stack applications.
 
     ```bash
     docker pull siddharthc23/backendapi:backendapi
-    ```
+     ```
 
 3. **Run the Docker Container:**
 
