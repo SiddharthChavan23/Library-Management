@@ -47,8 +47,8 @@ Follow these steps to set up and run the application on your local machine:
 #### 4.1 Clone the Repository
 
 ```bash
-https://github.com/SiddharthChavan23/LibSysRepository.git
-cd LibSysRepository
+https://github.com/SiddharthChavan23/Library-Management.git
+cd Library-Management
 ```
 
 #### 4.2 Create a Virtual Environment
