@@ -44,7 +44,6 @@ pip install -r requirements.txt
 #### 1.5 Run the Application
 
 ```bash
-cd app
 uvicorn index:app --reload
 ```
 
