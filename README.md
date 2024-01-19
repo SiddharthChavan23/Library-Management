@@ -23,7 +23,6 @@ A Python backend using FastAPI and Docker, designed for full-stack applications.
 3. **Run the Docker Container:**
 
     ```bash
-    docker run -d -p 8000:80 shivamvadalia/myimage
     docker run -d -p 8080:80 siddharthc23/backendapi
     ```
 
