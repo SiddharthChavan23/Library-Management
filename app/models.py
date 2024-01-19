@@ -4,7 +4,7 @@ from sqlalchemy import String,Integer,Column,ForeignKey,DateTime
 from sqlalchemy.orm import relationship
 from datetime import datetime
 
-
+# Define the Book model representing the 'books' table
 class Book(Base):
     __tablename__ = 'books'
 
@@ -14,6 +14,8 @@ class Book(Base):
     published_year = Column(Integer)
     is_checked_out = Column(Integer, default=0)
     checked_out_users = relationship("CheckedOutUser", back_populates="book")
+    
+# Define the User model representing the 'user' table
 
 class User(Base):
     __tablename__ = 'user'
@@ -21,6 +23,8 @@ class User(Base):
     user_name = Column(String(100), index=True)
     email = Column(String(100), index=True)
 
+# Define the CheckedOutUser model representing the 'checked_out_users' table
+    
 class CheckedOutUser(Base):
   __tablename__ = "checked_out_users"
 

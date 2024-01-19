@@ -1,6 +1,9 @@
 from pydantic import BaseModel
 from typing import Optional
 from datetime import datetime
+
+# Pydantic model for displaying detailed information about a book
+
 class Bookall(BaseModel):
     id :int
     title: str
@@ -27,6 +30,7 @@ class BookUpdate(BaseModel):
 class BookDelete(BaseModel):
     id: int
 
+# Pydantic model representing user information for dependency injection
 
 class UserDependency(BaseModel):
     user_id: int
@@ -37,6 +41,7 @@ class UserDependencyPut(BaseModel):
     email: Optional[str] = None
 
 
+# Pydantic model representing information about checked-out books and users
 
 class CheckedOutUsers(BaseModel):
   id: int

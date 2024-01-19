@@ -6,6 +6,7 @@ from app.db import Base, SessionLocal, engine
 from app.schema import BookCreate, BookUpdate, Bookall, UserDependency,UserDependencyPut
 from datetime import datetime
 
+# Create tables in the database on application startup
 
 Base.metadata.create_all(bind=engine)
 app = FastAPI()
@@ -13,12 +14,24 @@ async def create_tables():
     async with engine.begin() as conn:
         await conn.run_sync(Base.metadata.create_all)
 
+# Dependency to get a database session
+
 def get_db():
     db = SessionLocal()
     try:
         yield db
     finally:
         db.close()
+
+# API Routes
+
+     #Routes for Book
+           
+@app.get("/")
+async def read_root():
+    return {"message": "Welcome to the Library Management System API. Explore /docs for Swagger Documentation."}
+
+
 
 @app.get('/books', response_model=list[Bookall])
 async def get_books(db: Session = Depends(get_db)):
@@ -69,10 +82,7 @@ def delete_book(book_id: int, db: Session = Depends(get_db)):
     else:
         raise HTTPException(status_code=404, detail="Book not found")
     
-
-
-
-
+    #Routes for User
 
 @app.get('/user', response_model=list[UserDependency])
 async def get_user(db: Session = Depends(get_db)):
@@ -106,6 +116,9 @@ async def create_user(user: List[UserDependencyPut],db: Session=Depends(get_db))
     finally:
         db.close()
 
+    #Routes for Checkout
+
+
 @app.get("/checkout/")
 def read_checkout(db: Session = Depends(get_db)):
   checkout = db.query(CheckedOutUser).all()
@@ -136,19 +149,14 @@ def return_book(checkout_id: int, db: Session = Depends(get_db)):
    db.commit()
    return f"Book has been successfully returned on {datetime.now()} "
 
-
-
 @app.get("/generate_report/")
 def generate_report(db: Session = Depends(get_db)):
-    # Fetch checked-out books data
     checked_out_books = (
         db.query(CheckedOutUser, Book, User)
         .join(Book, CheckedOutUser.book_id == Book.id)
         .join(User, CheckedOutUser.user_id == User.user_id)
         .all()
     )
-
-    # Format the data into a report
     report = []
     for checkout, book, user in checked_out_books:
         report_entry = {
@@ -159,5 +167,4 @@ def generate_report(db: Session = Depends(get_db)):
             "return_date": checkout.return_date,
         }
         report.append(report_entry)
-
     return report
