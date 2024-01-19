@@ -34,7 +34,7 @@ A Python backend using FastAPI and Docker, designed for full-stack applications.
 
 ### 2.Architecture and Flow 
 
-![image](https://github.com/SiddharthChavan23/Library-Management/assets/88672777/b745ecff-94be-467d-83e9-3af7c64a4966)
+![image](https://github.com/SiddharthChavan23/Library-Management/assets/88672777/964886b4-86a2-41c7-b04d-77789fe6b796)
 
 ### 3.Database Schema
 
