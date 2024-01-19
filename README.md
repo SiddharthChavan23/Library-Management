@@ -51,7 +51,12 @@ The FastAPI application should now be accessible at [http://localhost:8000](http
 
 
 #Architecture and Flow 
+
 ![image](https://github.com/SiddharthChavan23/LibSysRepository/assets/88672777/f7dbcd40-e1f3-480f-85fa-3a0f11c9a515)
+
+#Database Schema
+
+![image](https://github.com/SiddharthChavan23/LibSysRepository/assets/88672777/693f2219-7d7b-4d4b-a1c7-2732ee2c781a)
 
 
 
